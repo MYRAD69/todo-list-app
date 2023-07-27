@@ -1,0 +1,12 @@
+<h5>Add new task:</h5>
+<!-- @html-ignore -->
+<input type="text" placeholder="New task..." class="form-control mb-2" [(ngModel)]="newTask" />
+<div class="card-footer d-flex justify-content-between">
+  <button class="btn btn-success btn-sm" [disabled]="newTask.length == 0" (click)="addTask()">
+    Add
+  </button>
+  <button class="btn btn-danger btn-sm" [disabled]="taskList == undefined || taskList.taskList.length === 0"
+    (click)="clearTasks()">
+    Clear All!
+  </button>
+</div>

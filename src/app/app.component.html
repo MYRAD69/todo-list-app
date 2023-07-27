@@ -1,0 +1,6 @@
+<h1 class="text-center">Todo list</h1>
+<div class="container d-flex justify-content-between">
+  <app-add-task (addTaskEvent)="onAddTaskEvent($event)" (clearTasksEvent)="onClearTasksEvent()"
+    [taskList]="taskListComponent"></app-add-task>
+  <app-task-list [newTask]="newTask"></app-task-list>
+</div>

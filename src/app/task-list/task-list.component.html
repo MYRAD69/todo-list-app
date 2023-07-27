@@ -1,0 +1,21 @@
+<div>
+  <li class="list-group-item text-center" id="list-header">Task list</li>
+  <ul class="list-group" *ngFor="let task of taskList; let i = index">
+    <li class="list-group-item" *ngIf="task.name.length > 0">
+      <div class="d-flex justify-content-between">
+        <p class="text-break fs-6"
+          [ngClass]="{ 'disabled': task.completed, 'text-decoration-line-through': task.completed }">{{ task.name }}</p>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <button class="btn btn-sm float-right"
+            [ngClass]="{ 'btn-success': !task.completed, 'btn-outline-success': task.completed }"
+            (click)="toggleTask(i)">
+            ✓
+          </button>
+          <button class="btn btn-danger btn-sm float-right" (click)="deleteTask(i)">
+            X
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
